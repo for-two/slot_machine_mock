@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎌 和風スロットマシン
 
-## Getting Started
+Next.js + TypeScript で作られた美しい和風デザインのスロットマシンゲームです。
 
-First, run the development server:
+## 🌸 概要
+
+日本の伝統的なシンボルと和の色彩を使用したスロットマシンゲームです。桜、竹、龍、鬼などの縁起の良いシンボルで大当たりを目指しましょう！
+
+## ✨ 特徴
+
+### 🎮 ゲーム機能
+- **3リール式スロットマシン** - クラシックなスロット体験
+- **個別リール停止** - 戦略的にリールを停止
+- **段階的停止** - 0.5秒ずつずらして自動停止
+- **当たり判定** - 3つ揃い＋2つ揃い（小当たり）
+- **ジャックポット演出** - 鬼シンボル3つ揃いで大当たり
+
+### 🎨 和風デザイン
+- **和風シンボル**: 🌸桜 🎋竹 🐯虎 🦅鷹 🎌日の丸 ⛩️鳥居 🐉龍 👹鬼
+- **和の配色**: 赤・金・琥珀色を基調とした美しいカラーパレット
+- **特殊エフェクト**: 浮遊する桜の花びら、光るエフェクト
+- **日本語UI**: 小判、賭け金、当たりなど和風の表現
+
+### 🎯 配当システム
+| シンボル | 配当 | 特徴 |
+|---------|------|------|
+| 👹 鬼 | 500倍 | ジャックポット |
+| 🐉 龍 | 200倍 | バウンスアニメーション |
+| ⛩️ 鳥居 | 100倍 | 輝きエフェクト |
+| 🎌 日の丸 | 50倍 | - |
+| 🦅 鷹 | 40倍 | - |
+| 🐯 虎 | 30倍 | - |
+| 🎋 竹 | 20倍 | - |
+| 🌸 桜 | 10倍 | - |
+
+※ 2つ揃いでも小当たり（ベット額の0.5倍）
+
+## 🛠️ 技術スタック
+
+- **フレームワーク**: [Next.js 15](https://nextjs.org/)
+- **言語**: [TypeScript](https://www.typescriptlang.org/)
+- **スタイリング**: [Tailwind CSS](https://tailwindcss.com/)
+- **アニメーション**: CSS Transitions + Tailwind Animation
+- **状態管理**: React Hooks (useState, useCallback, useRef)
+
+## 🚀 セットアップ
+
+### 前提条件
+- Node.js 18.0.0 以上
+- npm, yarn, pnpm, または bun
+
+### インストール
+
+```bash
+# リポジトリをクローン
+git clone git@github.com:for-two/slot_machine_mock.git
+cd slot_machine_mock
+
+# 依存関係をインストール
+npm install
+# または
+yarn install
+# または
+pnpm install
+```
+
+### 開発サーバーの起動
 
 ```bash
 npm run dev
-# or
+# または
 yarn dev
-# or
+# または
 pnpm dev
-# or
+# または
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いてゲームをお楽しみください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎮 使い方
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **賭け金を選択** - 10両、20両、50両、100両から選択
+2. **「回す」ボタンをクリック** - スロットが回転開始
+3. **リールを停止** - 以下の方法で停止可能
+   - 「全停止」ボタン - 自動で順次停止
+   - 「1番目」「2番目」「3番目」ボタン - 個別に停止
+4. **結果確認** - 当たりの場合は演出と配当が表示
 
-## Learn More
+## 📱 レスポンシブ対応
 
-To learn more about Next.js, take a look at the following resources:
+デスクトップ、タブレット、スマートフォンすべてのデバイスで快適にプレイできます。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 デプロイ
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Vercel（推奨）
+```bash
+# Vercel CLIをインストール
+npm i -g vercel
 
-## Deploy on Vercel
+# デプロイ
+vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Netlify
+```bash
+# ビルド
+npm run build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# distフォルダをNetlifyにアップロード
+```
+
+### GitHub Pages
+```bash
+# static exportを有効化
+npm run build
+npm run export
+```
+
+## 🤝 貢献
+
+プルリクエストやイシューの報告を歓迎します。
+
+1. このリポジトリをフォーク
+2. フィーチャーブランチを作成 (`git checkout -b feature/amazing-feature`)
+3. 変更をコミット (`git commit -m 'Add some amazing feature'`)
+4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
+5. プルリクエストを作成
+
+## 📄 ライセンス
+
+このプロジェクトは MIT ライセンスの下で公開されています。詳細は [LICENSE](LICENSE) ファイルをご覧ください。
+
+## 🙏 謝辞
+
+- [Next.js](https://nextjs.org/) - 素晴らしいReactフレームワーク
+- [Tailwind CSS](https://tailwindcss.com/) - 美しいスタイリング
+- [Unicode Emoji](https://unicode.org/emoji/) - 和風シンボル
+
+---
+
+🎌 **楽しい和風スロット体験をお楽しみください！** 🎌
